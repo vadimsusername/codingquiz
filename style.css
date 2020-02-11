@@ -28,6 +28,15 @@ header h4 {
     height:500px;
 }
 
+.start-view {
+    display: flex;
+    flex-direction: column;
+}
+
+.start-view h2, .start-button {
+    align-self:center;
+}
+
 .questions {
     display: none;
 }
