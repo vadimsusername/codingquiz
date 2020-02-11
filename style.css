@@ -8,6 +8,17 @@
 header {
     background-color: #e1f2fb ;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header a {
+    padding-left:10px;
+  
+}
+
+header h4 {
+    padding-right: 10px;
 }
 
 .main {
