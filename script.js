@@ -2,9 +2,31 @@ var startView = document.querySelector(".start-view");
 var startBtn = document.querySelector(".start-button");
 var question1 = document.querySelector("question1");
 
+var timer = 20;
+var timeInterval;
+
 startBtn.addEventListener("click",function(){
     startView.style.display = "none";
     question1.style.display = "block";
+    timeInterval = setInterval(function(){
+
+        if(timer === 0){
+            document.querySelector(questions[questionIndex]).style.display = "none";
+
+            document.getElementById("timeout").style.display = "block";
+
+            setTimeout(function(){
+                document.getElementById("timeout").style.display = "none";
+                quizOver();
+                clearInterval(timeInterval);
+            },2000)
+            
+        }
+        else{
+            timer--;
+            document.getElementById("timer").textContent = timer;
+        }
+    },1000);
     
 })
 
