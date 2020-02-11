@@ -1,0 +1,26 @@
+.wrapper {
+    width: 80%;
+    height: 100vh;
+    margin:auto;
+    background-color: #effffb;
+}
+
+header {
+    background-color: #e1f2fb ;
+    width: 100%;
+}
+
+.main {
+    margin-top: 20px;
+    width: 50%;
+    background-color: #f6f4e6 ;
+    height:500px;
+}
+
+.questions {
+    display: none;
+}
+
+.quiz-end {
+    display: none;
+}
