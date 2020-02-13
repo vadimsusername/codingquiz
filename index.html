@@ -10,18 +10,16 @@
 <body>
     <div class="wrapper">
         <header>
-            <a link href="#">View Highsores</a>
-            <h1>JavaScript quiz</h1>
+            <a  href="highscores.html">View Highsores</a>
+            <h1>JavaScript Quiz</h1>
             <h4>Time Left: <span id="timer">20</span></h4>
         </header>
 
         <main>
-            <!--set to display:none when start quiz button is pressed-->
            <div class="start-view">
-                <h2>Coding Quiz Challenge</h2>
-                <button class="start-button">Click to Start Quiz</button>
+              <h2>Coding Quiz Challenge</h2>
+              <button class="start-button">Click to Start Quiz</button>
            </div>
-           <!--Initially set to display:none, switch to display:block when start quiz button is pressed-->
            <div class="questions">
                 <div class="question1">
                     <h3 class="question">The name of the function used to attach an event to an html element is _____ ?</h3>
@@ -32,35 +30,55 @@
                         <li><button class="correct">addEventListener()</button></li>
                     </ol>
                 </div>
+                <div class="question2">
+                    <h3 class="question">The function that is used to create a new html element is _____?</h3>
+                    <ol class="answers">
+                        <li><button >makeElement()</button></li>
+                        <li><button class="correct">createElement()</button></li>
+                        <li><button >createNewElemnt()</button></li>
+                        <li><button >makeNewElement()</button></li>
+                    </ol>
+                </div>
+                <div class="question3">
+                    <h3 class="question">Which of the following functions is not used to access an html element?</h3>
+                    <ol class="answers">
+                        <li><button>getElementById()</button></li>
+                        <li><button class="correct">getElementByClass</button></li>
+                        <li><button>querySelector()</button></li>
+                        <li><button>querySelectorAll()</button></li>
+                    </ol>
+                </div>
+                <div class="question4">
+                    <h3 class="question">Which of the following statements is not true about objects?</h3>
+                    <ol class="answers">
+                        <li><button>Objects can contain properties and methods</button></li>
+                        <li><button >Objects can contain other objects as properties</button></li>
+                        <li><button class="correct">Object properties can only be accessed with dot notation</button></li>
+                        <li><button>Objects inherit from atleast one other object</button></li>
+                    </ol>
+                </div>
+                <div class="question5">
+                    <h3 class="question">Which of the following statements is not true about functions?</h3>
+                    <ol class="answers">
+                        <li><button class="correct">Functions must have a return value</button></li>
+                        <li><button>Functions can return a function</button></li>
+                        <li><button>Functions don't always have to be named</button></li>
+                        <li><button>Functions can be passed as arguments to other functions</button></li>
+                    </ol>
+                </div>
             </div>
-            <div class="question2">
-                <h3 class="question">The function that is used to create a new html element is _____?</h3>
-                <ol class="answers">
-                    <li><button >makeElement()</button"></li>
-                    <li><button class="correct">createElement()</button></li>
-                    <li><button >createNewElemnt()</button></li>
-                    <li><button >makeNewElement()</button></li>
-                </ol>
-            </div>
-            <div class="question3">
-                <h3 class="question">Which of the following functions is not used to access an html element?</h3>
-                <ol class="answers">
-                    <li><button>getElementById()</button data-answer="incorrect"></li>
-                    <li><button class="correct">getElementByClass</button></li>
-                    <li><button>querySelector()</button data-answer="incorrect"></li>
-                    <li><button>querySelectorAll()</button data-answer="incorrect"></li>
-                </ol>
-            </div>
-            <!--Initially set to display:none, switch to display:block when quiz is over-->
             <div id="quiz-end">
-                h3>End of Quiz</h3>
-                <h3>Your score is <span id="final-score"></span></h3>
-                <form action="highscores.html">
-                    <label>Enter Initials</label>
-                    <input type="text">
-                    <br>
-                    <button id="submit" type="submit">Submit</button>
-                </form>
+                <div id="end-wrapper">
+                    <h3>End of Quiz</h3>
+                    <h3>Your score is <span id="final-score"></span></h3>
+
+                    <form >
+                        <label>Enter Initials</label>
+                        <input id="initials" type="text">
+                        <br>
+                        <button id="submit" type="submit">Submit</button>
+                    </form>
+                </div>
             </div>
             <div id="timeout">
                 <h2>Out of Time</h2>
@@ -70,7 +88,5 @@
 
     <script src="script.js">
     </script>
-</body>
-</html>
 </body>
 </html>

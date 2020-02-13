@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="hs-style.css">
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+</head>
+<body>
+    <div class ="wrapper">
+        <header>
+            <h1>JavaScript quiz</h1> 
+            <a href="index.html">Main Page</a>      
+        </header>
+    
+        <main>
+            <h2>High Scores</h2>
+            <div id="score-board">
+                <table id="score-table">
+                    <tr>
+                        <th>Initials</th>
+                        <th>Score</th>
+                    </tr>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script >
+        
+        //localStorage.clear();
+        function compare(a,b){
+            console.log(a);
+            console.log("in compare");
+            var scoreA = a.scr;
+            var scoreB = b.scr;
+            console.log( scoreA);
+            console.log(scoreB);
+            return scoreA - scoreB;
+        }
+
+        var scoreTable = document.getElementById("score-table");     
+
+        var scoresString = localStorage.getItem("highscores");
+        
+        console.log(scoresString);
+        if(scoresString){
+
+           
+
+            var parsedScores = JSON.parse(scoresString);
+            console.log(parsedScores);
+            parsedScores.sort(compare);
+            parsedScores.reverse();
+            for(var i = 0; i < parsedScores.length;i++){
+
+                var newRow = document.createElement("tr");
+                var initialsCell = document.createElement("td");
+                initialsCell.textContent = parsedScores[i].initls;
+                var scoreCell = document.createElement("td");
+                scoreCell.textContent = parsedScores[i].scr;              
+                newRow.appendChild(initialsCell);  
+                newRow.appendChild(scoreCell);
+                scoreTable.appendChild(newRow);
+
+            }
+
+        }else{
+            document.getElementById("score-table").style.display = "none";
+            scoreBoard = document.getElementById("score-board");
+            var scoreElement = document.createElement("h2");
+            scoreElement.textContent = "No scores";
+            scoreBoard.appendChild(scoreElement);
+                
+
+            console.log("No Scores");
+        }
+    </script>
+</body>
+</html>

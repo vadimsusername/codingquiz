@@ -1,17 +1,25 @@
+
+
+
 .wrapper {
+  
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     width: 80%;
     height: 100vh;
     margin:auto;
     background-color: #effffb;
 }
-
 header {
-    background-color: #e1f2fb ;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #e1f2fb ;
+    border-radius: 0px 0px 5px 5px;
+    width: 100%;
 }
+
 header a {
     padding-left:10px;
   
@@ -20,12 +28,19 @@ header a {
 header h4 {
     padding-right: 10px;
 }
+h1 {
+    
+    color: blue;
+}
 
-.main {
+main {
+    display: flex;
+    flex-direction: column;
     margin-top: 20px;
     width: 50%;
     background-color: #f6f4e6 ;
-    height:500px;
+    min-height: 60%;
+    border-radius: 5px;
 }
 
 .start-view {
@@ -36,7 +51,11 @@ header h4 {
 .start-view h2, .start-button {
     align-self:center;
 }
-
+.questions {
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
 .question1 {
     display: none;
 }
@@ -46,7 +65,61 @@ header h4 {
 .question3 {
     display: none;
 }
-
-.quiz-end {
+.question4 {
     display: none;
+}
+.question5 {
+    display: none;
+}
+#quiz-end {
+    display: none;
+}
+ #end-wrapper {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
+ }
+ /*
+#quiz-end h3 {
+    text-align: center;
+}
+*/
+
+
+#timeout {
+    display: none;
+}
+
+#timeout h2 {
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px){
+    .wrapper{
+        width: 100%;
+     
+    }
+    main {
+     
+        width: 80%; 
+        margin-left: 10%;
+        margin-right: 10%;
+        
+      
+    }
+}
+@media only screen and (max-width: 576px){
+    .wrapper{
+        width: 100%;
+     
+    }
+    main {
+     
+        width: 90%; 
+        margin-left: 5%;
+        margin-right: 5%;
+        
+      
+    }
 }
